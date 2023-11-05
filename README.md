@@ -8,24 +8,6 @@ This is a photo management application based on web technologies. Run it on your
 
 This project is currently in development and not feature complete for a version 1.0 yet. If you don't mind putting up with broken parts or want to help out, run the Docker image and give it a go. I'd love for other contributors to get involved.
 
-## Community and Social
-
-Please join in the discussion and help us gain visibility by following us on social media. Much appreciated :)
-
-- [Gitter live chat](https://gitter.im/photonixapp/community)
-- [Docker Hub](https://hub.docker.com/r/photonixapp/photonix/)
-- [Twitter](https://twitter.com/photonixapp)
-- [Instagram](https://www.instagram.com/photonixapp/)
-- [LinkedIn](https://www.linkedin.com/company/photonixapp/)
-- [Indie Hackers](https://www.indiehackers.com/product/photonix-photo-organizer-app)
-
-## Sponsorship
-
-If you get value from Photonix or like where we're heading then we'd really appreciate it if you considered sponsoring us on a monthly basis.
-
-- [GitHub Sponsors](https://github.com/sponsors/photonixapp)
-- [Patreon](https://www.patreon.com/photonixapp)
-
 ## Installing & Running
 
 The easiest way to run it is with [Docker Compose](https://docs.docker.com/compose/install/#install-compose) using the pre-built image following these steps.
