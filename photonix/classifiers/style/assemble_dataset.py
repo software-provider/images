@@ -72,7 +72,7 @@ def get_images_for_style(style, group_ids, image_path, num_images):
             url = url.format(**params)
 
             # Make the request and ensure it succeeds.
-            page_data = requests.get(url).json()
+            page_data = requests.get(url, timeout=60).json(timeout=60)
             if page_data['stat'] != 'ok':
                 raise Exception('Something is wrong: API returned {}'.format(page_data['stat']))
 
@@ -109,7 +109,7 @@ def download_image(url, filename):
             return True
 
         print(filename)
-        r = requests.get(url, stream=True)
+        r = requests.get(url, stream=True, timeout=60)
         if r.status_code == 200:
             with open(filename, 'wb') as f:
                 r.raw.decode_content = True

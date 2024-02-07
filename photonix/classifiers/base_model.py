@@ -39,7 +39,7 @@ class BaseModel:
 
     def get_model_info(self):
         from django.conf import settings
-        response = requests.get(settings.MODEL_INFO_URL)
+        response = requests.get(settings.MODEL_INFO_URL, timeout=60)
         models_info = json.loads(response.content)
         model_info = models_info[self.name][str(self.version)]
         return model_info
@@ -70,7 +70,7 @@ class BaseModel:
                     index = random.choice(range(len(locations)))
                     location = locations.pop(index)
                     hash_sha256 = hashlib.sha256()
-                    request = requests.get(location, stream=True)
+                    request = requests.get(location, stream=True, timeout=60)
 
                     if request.status_code != 200:
                         error = True
