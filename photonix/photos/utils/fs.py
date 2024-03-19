@@ -42,7 +42,7 @@ def find_new_file_name(path):
 
 
 def download_file(url, destination_path):
-    temp_path = tempfile.mktemp()
+    temp_path = tempfile.mkstemp()
     with requests.get(url, stream=True) as r:
         with open(temp_path, 'wb') as f:
             for chunk in r.iter_content(chunk_size=32768):

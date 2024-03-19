@@ -277,7 +277,7 @@ def generate_jpeg(path):
 
         if not valid_image:
             logger.debug('JPEG didn\'t pass test, attempting bitmap conversion')
-            jpeg_path = tempfile.mktemp()
+            jpeg_path = tempfile.mkstemp()
             bitmap_to_jpeg(temp_output_path, jpeg_path)
 
             if identified_as_jpeg(jpeg_path):
@@ -288,7 +288,7 @@ def generate_jpeg(path):
     # Move the outputted file to a new temporary location
     if valid_image:
         logger.debug('I\'m happy with the JPEG so moving it to a new location')
-        final_path = tempfile.mktemp()
+        final_path = tempfile.mkstemp()
         os.rename(temp_output_path, final_path)
 
     # Delete the temporary working directory
